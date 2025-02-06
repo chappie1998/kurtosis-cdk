@@ -52,7 +52,7 @@ def _start_service(
     )
     plan_files["/usr/local/share/proc-runner"] = proc_runner_file_artifact
 
-    if args["erigon_datadir_archive"] != None:
+    if args["erigon_datadir_archive"] is not None:
         existing_datadir_artifact = plan.upload_files(
             src=args["erigon_datadir_archive"],
         )
@@ -63,16 +63,53 @@ def _start_service(
     (ports, public_ports) = get_cdk_erigon_ports(
         args, additional_ports, start_port_name
     )
+
+    service_name = "cdk-erigon-" + type + args["deployment_suffix"]
+    image = args["cdk_erigon_node_image"]
+    entrypoint = ["/usr/local/share/proc-runner/proc-runner.sh"]
+    cmd = ["cdk-erigon", "--config", "/etc/cdk-erigon/config.yaml"]
+
+    # Construct the equivalent Docker command
+    docker_command = f"docker run -d \\\n"
+    docker_command += f"    --name {service_name} \\\n"
+    docker_command += f"    --user 0:0 \\\n"
+
+    # Add port mappings
+    for port_id, port_spec in public_ports.items():
+        docker_command += f"    -p {port_spec.number}:{ports[port_id].number} \\\n"
+
+    # Add environment variables
+    for key, value in env_vars.items():
+        docker_command += f"    -e {key}={value} \\\n"
+
+    # Add volume mounts
+    for container_path, artifact in plan_files.items():
+        docker_command += f"    -v {artifact}:{container_path} \\\n"
+
+    # Add entrypoint
+    docker_command += f"    --entrypoint {' '.join(entrypoint)} \\\n"
+
+    # Add image
+    docker_command += f"    {image} \\\n"
+
+    # Add command
+    docker_command += f"    {' '.join(cmd)}"
+
+    # Print the Docker command
+    plan.print("Equivalent Docker command to start the service:")
+    plan.print(docker_command)
+
+    # Add the service
     plan.add_service(
-        name="cdk-erigon-" + type + args["deployment_suffix"],
+        name=service_name,
         config=ServiceConfig(
-            image=args["cdk_erigon_node_image"],
+            image=image,
             ports=ports,
             user=User(uid=0, gid=0),
             public_ports=public_ports,
             files=plan_files,
-            entrypoint=["/usr/local/share/proc-runner/proc-runner.sh"],
-            cmd=["cdk-erigon --config /etc/cdk-erigon/config.yaml"],
+            entrypoint=entrypoint,
+            cmd=cmd,
             env_vars=env_vars,
         ),
     )

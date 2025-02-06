@@ -16,7 +16,7 @@ DEFAULT_DEPLOYMENT_STAGES = {
     # Deploy databases.
     "deploy_databases": True,
     # Deploy CDK central/trusted environment.
-    "deploy_cdk_central_environment": False,
+    "deploy_cdk_central_environment": True,
     # Deploy CDK bridge infrastructure.
     "deploy_cdk_bridge_infra": False,
     # Deploy CDK bridge UI.
@@ -25,7 +25,7 @@ DEFAULT_DEPLOYMENT_STAGES = {
     "deploy_agglayer": False,
     # Deploy cdk-erigon node.
     # TODO: Remove this parameter to incorporate cdk-erigon inside the central environment.
-    "deploy_cdk_erigon_node": False,
+    "deploy_cdk_erigon_node": True,
     # Deploy Optimism rollup.
     "deploy_optimism_rollup": False,
     # Deploy contracts on L2 (as well as fund accounts).
