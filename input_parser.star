@@ -22,7 +22,7 @@ DEFAULT_DEPLOYMENT_STAGES = {
     # Deploy CDK bridge UI.
     "deploy_cdk_bridge_ui": False,
     # Deploy the agglayer.
-    "deploy_agglayer": False,
+    "deploy_agglayer": True,
     # Deploy cdk-erigon node.
     # TODO: Remove this parameter to incorporate cdk-erigon inside the central environment.
     "deploy_cdk_erigon_node": False,
