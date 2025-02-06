@@ -16,7 +16,7 @@ DEFAULT_DEPLOYMENT_STAGES = {
     # Deploy databases.
     "deploy_databases": True,
     # Deploy CDK central/trusted environment.
-    "deploy_cdk_central_environment": True,
+    "deploy_cdk_central_environment": False,
     # Deploy CDK bridge infrastructure.
     "deploy_cdk_bridge_infra": False,
     # Deploy CDK bridge UI.
