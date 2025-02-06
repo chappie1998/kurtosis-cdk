@@ -50,6 +50,8 @@ def run(plan, args={}):
         contract_setup_addresses = service_package.get_contract_setup_addresses(
             plan, args
         )
+        plan.print("contract_setup_addresses: " + json.encode(contract_setup_addresses))
+
     else:
         plan.print("Skipping the deployment of zkevm contracts on L1")
 
