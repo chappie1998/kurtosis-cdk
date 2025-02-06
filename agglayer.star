@@ -81,6 +81,8 @@ def create_agglayer_prover_config_artifact(plan, args):
     agglayer_prover_config_template = read_file(
         src="./templates/bridge-infra/agglayer-prover-config.toml"
     )
+    plan.print("agglayer_prover_config_template: " + json.encode(agglayer_prover_config_template))
+
 
     is_cpu_prover_enabled = "true"
     is_network_prover_enabled = "false"

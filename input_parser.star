@@ -16,13 +16,13 @@ DEFAULT_DEPLOYMENT_STAGES = {
     # Deploy databases.
     "deploy_databases": False,
     # Deploy CDK central/trusted environment.
-    "deploy_cdk_central_environment": False,
+    "deploy_cdk_central_environment": True,
     # Deploy CDK bridge infrastructure.
     "deploy_cdk_bridge_infra": False,
     # Deploy CDK bridge UI.
     "deploy_cdk_bridge_ui": False,
     # Deploy the agglayer.
-    "deploy_agglayer": True,
+    "deploy_agglayer": False,
     # Deploy cdk-erigon node.
     # TODO: Remove this parameter to incorporate cdk-erigon inside the central environment.
     "deploy_cdk_erigon_node": False,
