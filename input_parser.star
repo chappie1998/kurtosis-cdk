@@ -8,24 +8,24 @@ DEFAULT_DEPLOYMENT_STAGES = {
     # Deploy a local L1 chain using the ethereum-package.
     # Set to false to use an external L1 like Sepolia.
     # Note that it will require a few additional parameters.
-    "deploy_l1": False,
+    "deploy_l1": True,
     # Deploy zkevm contracts on L1 (as well as fund accounts).
     # Set to false to use pre-deployed zkevm contracts.
     # Note that it will require a few additional parameters.
-    "deploy_zkevm_contracts_on_l1": False,
+    "deploy_zkevm_contracts_on_l1": True,
     # Deploy databases.
-    "deploy_databases": False,
+    "deploy_databases": True,
     # Deploy CDK central/trusted environment.
-    "deploy_cdk_central_environment": False,
+    "deploy_cdk_central_environment": True,
     # Deploy CDK bridge infrastructure.
-    "deploy_cdk_bridge_infra": False,
+    "deploy_cdk_bridge_infra": True,
     # Deploy CDK bridge UI.
     "deploy_cdk_bridge_ui": False,
     # Deploy the agglayer.
     "deploy_agglayer": True,
     # Deploy cdk-erigon node.
     # TODO: Remove this parameter to incorporate cdk-erigon inside the central environment.
-    "deploy_cdk_erigon_node": False,
+    "deploy_cdk_erigon_node": True,
     # Deploy Optimism rollup.
     "deploy_optimism_rollup": False,
     # Deploy contracts on L2 (as well as fund accounts).
