@@ -50,6 +50,8 @@ def run(plan, args, contract_setup_addresses):
         service_name="contracts" + args["deployment_suffix"],
         src="/opt/zkevm/agglayer.keystore",
     )
+    plan.print("agglayer_keystore_artifact: " + json.encode(agglayer_keystore_artifact))
+
 
     (ports, public_ports) = get_agglayer_ports(args)
     plan.add_service(

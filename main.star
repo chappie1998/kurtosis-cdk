@@ -89,6 +89,8 @@ def run(plan, args={}):
             service_name="contracts" + args["deployment_suffix"],
             src="/opt/zkevm/genesis.json",
         )
+        plan.print("genesis_artifact: " + json.encode(genesis_artifact))
+
 
     # Deploy the agglayer.
     if deployment_stages.get("deploy_agglayer", False):
