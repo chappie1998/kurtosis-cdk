@@ -52,7 +52,7 @@ def _start_service(
     )
     plan_files["/usr/local/share/proc-runner"] = proc_runner_file_artifact
 
-    if args["erigon_datadir_archive"] is not None:
+    if args["erigon_datadir_archive"] != None:
         existing_datadir_artifact = plan.upload_files(
             src=args["erigon_datadir_archive"],
         )
