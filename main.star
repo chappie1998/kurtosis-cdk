@@ -27,8 +27,7 @@ tx_spammer_package = "./src/additional_services/tx_spammer.star"
 assertoor_package = "./src/additional_services/assertoor.star"
 
 # Hardcoded contract addresses (Replace with actual values)
-contract_setup_addresses = {"pol_token_address":"0xEdE9cf798E0fE25D35469493f43E88FeA4a5da0E","polygon_data_committee_address":"0x5A6896A98c4B7C7E8f16d177C719a1d856b9154c","zkevm_admin_address":"0xE34aaF64b29273B7D567FCFc40544c014EEe9970","zkevm_bridge_address":"0xD71f8F956AD979Cc2988381B8A743a2fE280537D","zkevm_bridge_l2_address":"0xD71f8F956AD979Cc2988381B8A743a2fE280537D","zkevm_global_exit_root_address":"0x1f7ad7caA53e35b4f0D138dC5CBF91aC108a2674","zkevm_global_exit_root_l2_address":"0xa40d5f56745a118d0906a34e69aec8c0db1cb8fa","zkevm_rollup_address":"0x1Fe038B54aeBf558638CA51C91bC8cCa06609e91","zkevm_rollup_manager_address":"0x2F50ef6b8e8Ee4E579B17619A92dE3E2ffbD8AD2","zkevm_rollup_manager_block_number":"52"}
-
+contract_setup_addresses = {"pol_token_address":"0xEdE9cf798E0fE25D35469493f43E88FeA4a5da0E","polygon_data_committee_address":"0x5A6896A98c4B7C7E8f16d177C719a1d856b9154c","zkevm_admin_address":"0xE34aaF64b29273B7D567FCFc40544c014EEe9970","zkevm_bridge_address":"0xD71f8F956AD979Cc2988381B8A743a2fE280537D","zkevm_bridge_l2_address":"0xD71f8F956AD979Cc2988381B8A743a2fE280537D","zkevm_global_exit_root_address":"0x1f7ad7caA53e35b4f0D138dC5CBF91aC108a2674","zkevm_global_exit_root_l2_address":"0xa40d5f56745a118d0906a34e69aec8c0db1cb8fa","zkevm_rollup_address":"0x1Fe038B54aeBf558638CA51C91bC8cCa06609e91","zkevm_rollup_manager_address":"0x2F50ef6b8e8Ee4E579B17619A92dE3E2ffbD8AD2","zkevm_rollup_manager_block_number":"50"}
 
 def run(plan, args={}):
     # Parse args.
