@@ -1,0 +1,30 @@
+combinations:
+  - fork: 9
+    da-modes:
+      - cdk-validium
+      - rollup
+    components:
+      - legacy-zkevm-stack
+      - new-cdk-stack
+
+  - fork: 11
+    da-modes:
+      - cdk-validium
+      - rollup
+    components:
+      - new-cdk-stack
+
+  - fork: 12
+    da-modes:
+      - cdk-validium
+      - rollup
+    components:
+     - new-cdk-stack
+
+  - fork: 13
+    da-modes:
+      - cdk-validium
+      - rollup
+    components:
+     - new-cdk-stack
+
